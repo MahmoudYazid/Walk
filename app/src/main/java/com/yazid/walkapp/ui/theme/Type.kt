@@ -1,4 +1,4 @@
-package com.yazid.walk.view.googleSignin.ui.theme
+package com.yazid.walkapp.ui.theme
 
 import androidx.compose.material3.Typography
 import androidx.compose.ui.text.TextStyle

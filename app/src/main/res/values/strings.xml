@@ -1,5 +1,4 @@
 <resources>
-    <string name="app_name">Walk</string>
-    <string name="title_activity_login">LoginActivity</string>
-    <string name="title_activity_map">Map</string>
+    <string name="app_name">walkapp</string>
+    <string name="GoogleAuthID">792234806071-6unrkvtph9apfq4s63hbvgbo6f14jeji.apps.googleusercontent.com</string>
 </resources>

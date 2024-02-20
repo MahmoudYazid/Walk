@@ -1,4 +1,4 @@
-package com.yazid.walk.ui.theme
+package com.yazid.walkapp.ui.theme
 
 import androidx.compose.ui.graphics.Color
 

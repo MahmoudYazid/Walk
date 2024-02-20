@@ -1,4 +1,4 @@
-package com.yazid.walk
+package com.yazid.walkapp
 
 import org.junit.Test
 
