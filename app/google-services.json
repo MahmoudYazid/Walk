@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "317699620267",
+    "project_id": "walk-fa122",
+    "storage_bucket": "walk-fa122.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:317699620267:android:2d549ab540b2f9302426ee",
+        "android_client_info": {
+          "package_name": "com.yazid.walk"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCrQl5EsJpHALGuD0tjHyBDmoUhnG3CY2g"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
