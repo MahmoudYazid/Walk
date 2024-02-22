@@ -48,6 +48,7 @@ class MainActivity : ComponentActivity() {
 
     lateinit var auth:FirebaseAuth
     lateinit var GoogleSigninClient: GoogleSignInClient
+
     public fun LoginAuthInit(){
         auth = Firebase.auth
         val gso = GoogleSignInOptions.Builder(GoogleSignInOptions.DEFAULT_SIGN_IN)
@@ -91,7 +92,8 @@ class MainActivity : ComponentActivity() {
         auth.signInWithCredential(credintial).addOnCompleteListener {it->
             if (it.isSuccessful){
 
-                Toast.makeText(this, "login", Toast.LENGTH_SHORT).show()
+                val Intent =  Intent(this, map::class.java)
+                this.startActivity(Intent)
 
 
 
