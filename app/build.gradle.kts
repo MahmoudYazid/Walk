@@ -108,6 +108,29 @@ dependencies {
     implementation ("androidx.fragment:fragment-ktx:1.3.3")
     implementation ("androidx.activity:activity-compose:1.4.0")
 
+    // okhttp
+    implementation ("com.squareup.okhttp3:okhttp:4.9.1")
+
+    // Retrofit
+    implementation("com.squareup.retrofit2:retrofit:2.9.0")
+// Retrofit with Scalar Converter
+    implementation("com.squareup.retrofit2:converter-scalars:2.9.0")
+    //
+    implementation("com.google.code.gson:gson:2.8.8")
+    implementation("com.squareup.retrofit2:retrofit:2.2.0")
+    implementation ("com.squareup.retrofit2:converter-gson:2.2.0")
+
+    //plyutil
+    implementation ("com.google.maps.android:android-maps-utils:2.2.1")
+
+// firestore
+    // Import the BoM for the Firebase platform
+    implementation(platform("com.google.firebase:firebase-bom:31.0.0"))
+
+    // Declare the dependency for the Firestore library
+    implementation ("com.google.firebase:firebase-firestore-ktx")
+
+
 
 
 }
