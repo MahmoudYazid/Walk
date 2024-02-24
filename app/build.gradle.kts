@@ -9,6 +9,20 @@ plugins {
 }
 
 android {
+    signingConfigs {
+        getByName("debug") {
+            storeFile = file("C:\\Users\\ahmed\\Desktop\\GIT\\Walk\\key\\walk.jks")
+            storePassword = "mnimai21yo"
+            keyAlias = "key0"
+            keyPassword = "mnimai21yo"
+        }
+        create("release") {
+            storeFile = file("C:\\Users\\ahmed\\Desktop\\GIT\\Walk\\key\\walk.jks")
+            storePassword = "mnimai21yo"
+            keyPassword = "mnimai21yo"
+            keyAlias = "key0"
+        }
+    }
     namespace = "com.yazid.walkapp"
     compileSdk = 34
 
@@ -27,6 +41,7 @@ android {
 
     buildTypes {
         release {
+            signingConfig = signingConfigs.getByName("release")
             isMinifyEnabled = false
             proguardFiles(
                 getDefaultProguardFile("proguard-android-optimize.txt"),
