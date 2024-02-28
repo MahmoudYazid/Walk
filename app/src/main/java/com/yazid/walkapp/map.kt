@@ -126,41 +126,62 @@ class map : ComponentActivity() {
         }
     }
     fun requestPermission() {
-
-        when {
-            ContextCompat.checkSelfPermission(
-                this,
-                android.Manifest.permission.ACCESS_FINE_LOCATION
-            ) == PackageManager.PERMISSION_GRANTED -> {
-                // You can use the API that requires the permission.
-            }
-            ActivityCompat.shouldShowRequestPermissionRationale(
-                this,                 android.Manifest.permission.ACCESS_FINE_LOCATION) -> {
-
-                val builder = AlertDialog.Builder(this)
-                builder.setTitle("we need permission")
-                builder.setMessage("we need permission for gps")
+        val beforebuilder = AlertDialog.Builder(this)
+        beforebuilder.setTitle("Data Handling Disclosure")
+        beforebuilder.setMessage("Your app handles location data to provide relevant " +
+                "" +
+                "features and improve user experience. We respect your privacy and ensure that your data is" +
+                " securely handled."+
+                "We use this only for gps activities that belongs to the purpose of app  "+
+                "you can check our privacy page to check totally why we need it : "+
+                "https://walk-privacy-page.vercel.app/")
 //builder.setPositiveButton("OK", DialogInterface.OnClickListener(function = x))
 
-                builder.setPositiveButton(android.R.string.yes) { dialog, which ->
+        beforebuilder.setPositiveButton(android.R.string.yes) { dialog, which ->
+            when {
+                ContextCompat.checkSelfPermission(
+                    this,
+                    android.Manifest.permission.ACCESS_FINE_LOCATION
+                ) == PackageManager.PERMISSION_GRANTED -> {
+                    // You can use the API that requires the permission.
+                }
+                ActivityCompat.shouldShowRequestPermissionRationale(
+                    this,                 android.Manifest.permission.ACCESS_FINE_LOCATION) -> {
+
+
+
+
+
+                    val builder = AlertDialog.Builder(this)
+                    builder.setTitle("we need permission")
+                    builder.setMessage("we need permission for gps")
+//builder.setPositiveButton("OK", DialogInterface.OnClickListener(function = x))
+
+                    builder.setPositiveButton(android.R.string.yes) { dialog, which ->
+                        requestPermCallback.launch(android.Manifest.permission.ACCESS_FINE_LOCATION)
+
+                    }
+
+                    builder.setNegativeButton(android.R.string.no) { dialog, which ->
+                        dialog?.dismiss()
+                    }
+
+                    builder.show()
+                }
+                else -> {
+                    // You can directly ask for the permission.
+                    // The registered ActivityResultCallback gets the result of this request.
                     requestPermCallback.launch(android.Manifest.permission.ACCESS_FINE_LOCATION)
 
                 }
+            }        }
 
-                builder.setNegativeButton(android.R.string.no) { dialog, which ->
-                   dialog?.dismiss()
-                }
-
-
-                builder.show()
-            }
-            else -> {
-                // You can directly ask for the permission.
-                // The registered ActivityResultCallback gets the result of this request.
-                requestPermCallback.launch(android.Manifest.permission.ACCESS_FINE_LOCATION)
-
-            }
+        beforebuilder.setNegativeButton(android.R.string.no) { dialog, which ->
+            dialog?.dismiss()
         }
+
+        beforebuilder.show()
+
     }
     fun getRoute(origin: LatLng, destination: LatLng) {
         val apiKey = "AIzaSyClp46OnfM7iTVhkcqm0fqaGsc6VVsmmfY"
